@@ -11,7 +11,7 @@
                             <v-flex xs12>
                                 <v-text-field type="password" label="Password" v-model="password"></v-text-field>
                             </v-flex>
-                            <div class="error" v-html="error"></div>
+                            <div class="alert-danger" v-html="error"></div>
 
                             <v-flex xs12>
                                 <v-btn class="cyan" dark @click="register">Register</v-btn>
@@ -56,9 +56,7 @@ export default {
 </script>
 
 <style scoped>
-.error {
-    color: red;
-}
+
 </style>
 
 
