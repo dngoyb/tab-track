@@ -4,7 +4,12 @@
             <span class="home" @click="navigateTo({name: 'home'})">TabTracker</span>
         </v-toolbar-title>
         <v-toolbar-items>
-            <v-btn flat dark>Browse</v-btn>
+            <v-btn
+                v-if="!$store.state.isUserLoggedIn"
+                flat
+                dark
+                @click="navigateTo({name: 'songs'})"
+            >Browse</v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
         <v-toolbar-items>
@@ -24,7 +29,10 @@
             >sign up</v-btn>
         </v-toolbar-items>
         <v-toolbar-items>
-            <v-btn v-if="$store.state.isUserLoggedIn" flat dark @click="logout">log out</v-btn>
+            <v-btn v-if="$store.state.isUserLoggedIn" flat dark @click="logout">
+                <span right>logout</span>
+                <v-icon small>exit_to_app</v-icon>
+            </v-btn>
         </v-toolbar-items>
     </v-toolbar>
 </template>
