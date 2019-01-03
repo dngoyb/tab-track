@@ -46,7 +46,7 @@
 </template>
 <script>
 import Panel from "@/components/Panel";
-import SongService from "@/services/songService";
+import SongService from "@/services/SongService";
 export default {
     data() {
         return {
@@ -71,10 +71,9 @@ export default {
         async create() {
             this.error = null;
             const areAllFieldsFilledIn = Object.keys(this.song).every(
-                (key => !!this.song[key])
+                key => !!this.song[key]
             );
             if (!areAllFieldsFilledIn) {
-
                 this.error = "Please fill in all required fields";
                 return;
             }
@@ -84,12 +83,11 @@ export default {
                     name: "songs"
                 });
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         }
     }
 };
 </script>
 <style scoped>
-
 </style>

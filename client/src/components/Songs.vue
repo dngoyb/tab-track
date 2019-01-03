@@ -38,7 +38,7 @@
 </template>
 <script>
 import Panel from "@/components/Panel";
-import songService from "@/services/songService";
+import SongService from "@/services/SongService";
 export default {
     components: {
         Panel
@@ -54,7 +54,7 @@ export default {
         }
     },
     async mounted() {
-        this.songs = (await songService.getAllSongs()).data;
+        this.songs = (await SongService.getAllSongs()).data;
     }
 };
 </script>

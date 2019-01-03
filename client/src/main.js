@@ -7,6 +7,9 @@ import './registerServiceWorker'
 import {
   sync
 } from 'vuex-router-sync'
+import VueYouTubeEmbed from 'vue-youtube-embed'
+
+Vue.use(VueYouTubeEmbed)
 sync(store, router)
 
 Vue.config.productionTip = false
